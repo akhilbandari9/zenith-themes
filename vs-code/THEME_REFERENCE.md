@@ -8,6 +8,7 @@ Quick reference for understanding what colors are used where without reading the
 - All borders, focus outlines, and window borders are **neutral grays** — never colored
 - Backgrounds use a 3-tier depth system from darkest (editor) to lighter (widgets)
 - Semantic colors (red/orange/green/blue) are used consistently for their meaning across all UI areas
+- Syntax highlighting uses **One Dark Pro** colors for editor text
 
 ---
 
@@ -28,19 +29,28 @@ Quick reference for understanding what colors are used where without reading the
 | Step 11 | `#808080` | Muted text, placeholders, breadcrumbs, inactive icons, comments             |
 | Step 12 | `#eeeeee` | Primary text, active foregrounds                                            |
 
-### Primary & Accent Colors
+### UI Accent Colors
 
-| Name          | Hex       | Swatch        | Role                                                 |
-| ------------- | --------- | ------------- | ---------------------------------------------------- |
-| Primary       | `#fab283` | coral/warm    | Action buttons, badges, active indicators, cursor    |
-| Primary Hover | `#ffc09f` | lighter coral | Button hover state                                   |
-| Secondary     | `#5c9cf5` | blue          | Links, info indicators, git modified, CSS properties |
-| Accent        | `#9d7cd8` | purple        | Syntax keywords, constructors, bracket pair #2       |
-| Red           | `#e06c75` | soft red      | Errors, deletions, variables, HTML tags              |
-| Orange        | `#f5a742` | amber         | Warnings, numbers, decorators, HTML attributes       |
-| Green         | `#7fd88f` | soft green    | Success, additions, strings                          |
-| Cyan          | `#56b6c2` | teal          | Operators, interfaces, escape chars, submodules      |
-| Yellow        | `#e5c07b` | warm yellow   | Types, classes, enums, CSS selectors                 |
+| Name          | Hex       | Swatch        | Role                                              |
+| ------------- | --------- | ------------- | ------------------------------------------------- |
+| Primary       | `#fab283` | coral/warm    | Action buttons, badges, active indicators, cursor |
+| Primary Hover | `#ffc09f` | lighter coral | Button hover state                                |
+| Secondary     | `#5c9cf5` | blue          | Links, info indicators, git modified              |
+
+### Syntax Colors (One Dark Pro)
+
+| Name       | Hex       | Swatch      | Role                                                 |
+| ---------- | --------- | ----------- | ---------------------------------------------------- |
+| Purple     | `#c678dd` | magenta     | Keywords, storage, template interpolation            |
+| Blue       | `#61afef` | sky blue    | Functions, methods, decorators, link text            |
+| Red        | `#e06c75` | soft red    | Variables, HTML tags, JSON keys, regex, headings     |
+| Orange     | `#d19a66` | muted amber | Numbers, constants, HTML attrs, CSS values, bold     |
+| Green      | `#98c379` | olive green | Strings, inline code, diff inserted                  |
+| Cyan       | `#56b6c2` | teal        | Operators, escape chars, vendor CSS, pseudo-classes  |
+| Yellow     | `#e5c07b` | warm yellow | Types, classes, this/self, annotations, list markers |
+| Foreground | `#abb2bf` | silver      | Punctuation, parameters, CSS properties              |
+| Comment    | `#7f848e` | gray        | Comments                                             |
+| Quote      | `#5c6370` | dark gray   | Markdown block quotes                                |
 
 ---
 
@@ -86,37 +96,51 @@ Everything else is gray or semantic.
 
 ## Syntax Highlighting
 
-| Token                 | Color              | Style         | Example                           |
-| --------------------- | ------------------ | ------------- | --------------------------------- |
-| Comments              | `#808080`          | italic        | `// comment`                      |
-| Keywords              | `#9d7cd8` (purple) | —             | `const`, `return`, `if`, `import` |
-| Functions             | `#fab283` (coral)  | —             | `myFunction()`, `console.log`     |
-| Variables             | `#e06c75` (red)    | —             | `myVar`, `count`                  |
-| Parameters            | `#e06c75` (red)    | italic        | function params                   |
-| `this`/`self`/`super` | `#e06c75` (red)    | italic        | `this.value`                      |
-| Strings               | `#7fd88f` (green)  | —             | `"hello"`                         |
-| Escape chars          | `#56b6c2` (cyan)   | —             | `\n`, `\t`                        |
-| Numbers               | `#f5a742` (orange) | —             | `42`, `3.14`                      |
-| Booleans/null         | `#f5a742` (orange) | —             | `true`, `null`                    |
-| Types/Classes         | `#e5c07b` (yellow) | —             | `MyClass`, `string`               |
-| Interfaces            | `#56b6c2` (cyan)   | —             | `IMyInterface`                    |
-| Operators             | `#56b6c2` (cyan)   | —             | `=`, `+`, `===`                   |
-| Punctuation           | `#eeeeee` (white)  | —             | `{}`, `()`, `;`                   |
-| HTML tags             | `#e06c75` (red)    | —             | `<div>`, `<span>`                 |
-| HTML attributes       | `#f5a742` (orange) | italic        | `class=`, `id=`                   |
-| CSS properties        | `#5c9cf5` (blue)   | —             | `color:`, `margin:`               |
-| CSS selectors         | `#e5c07b` (yellow) | —             | `.class`, `#id`                   |
-| CSS values            | `#fab283` (coral)  | —             | `auto`, `bold`                    |
-| JSON keys             | `#e06c75` (red)    | —             | `"name":`                         |
-| Decorators            | `#f5a742` (orange) | italic        | `@Component`                      |
-| Regex                 | `#56b6c2` (cyan)   | —             | `/pattern/g`                      |
-| Markdown headings     | `#fab283` (coral)  | bold          | `# Title`                         |
-| Markdown bold         | `#f5a742` (orange) | bold          | `**bold**`                        |
-| Markdown italic       | `#9d7cd8` (purple) | italic        | `*italic*`                        |
-| Markdown links        | `#5c9cf5` (blue)   | —             | `[text](url)`                     |
-| Markdown code         | `#7fd88f` (green)  | —             | `` `code` ``                      |
-| Invalid               | `#e06c75` (red)    | strikethrough | —                                 |
-| Deprecated            | `#f5a742` (orange) | strikethrough | —                                 |
+| Token                   | Color                 | Style         | Example                           |
+| ----------------------- | --------------------- | ------------- | --------------------------------- |
+| Comments                | `#7f848e` (gray)      | italic        | `// comment`                      |
+| Keywords                | `#c678dd` (purple)    | —             | `const`, `return`, `if`, `import` |
+| Functions               | `#61afef` (blue)      | —             | `myFunction()`, `console.log`     |
+| Variables               | `#e06c75` (red)       | —             | `myVar`, `count`                  |
+| Variable obj/const      | `#e5c07b` (yellow)    | —             | `myObj.prop`, `MY_CONST`          |
+| Parameters              | `#abb2bf` (silver)    | italic        | function params                   |
+| `this`/`self`/`super`   | `#e5c07b` (yellow)    | italic        | `this.value`                      |
+| Strings                 | `#98c379` (green)     | —             | `"hello"`                         |
+| Template interpolation  | `#c678dd` (purple)    | —             | `${expr}`                         |
+| Escape chars            | `#56b6c2` (cyan)      | —             | `\n`, `\t`                        |
+| Numbers                 | `#d19a66` (orange)    | —             | `42`, `3.14`                      |
+| Booleans/null           | `#d19a66` (orange)    | —             | `true`, `null`                    |
+| Types/Classes           | `#e5c07b` (yellow)    | —             | `MyClass`, `string`               |
+| Interfaces              | `#e5c07b` (yellow)    | —             | `IMyInterface`                    |
+| Operators               | `#56b6c2` (cyan)      | —             | `=`, `+`, `===`                   |
+| Ternary/optional        | `#c678dd` (purple)    | —             | `?`, `?.`                         |
+| Punctuation             | `#abb2bf` (silver)    | —             | `{}`, `()`, `;`                   |
+| HTML tags               | `#e06c75` (red)       | —             | `<div>`, `<span>`                 |
+| HTML attributes         | `#d19a66` (orange)    | italic        | `class=`, `href=`                 |
+| HTML id attribute       | `#61afef` (blue)      | —             | `id=`                             |
+| CSS properties          | `#abb2bf` (silver)    | —             | `color:`, `margin:`               |
+| CSS vendor properties   | `#56b6c2` (cyan)      | —             | `-webkit-`, `-moz-`               |
+| CSS values              | `#d19a66` (orange)    | —             | `auto`, `bold`, `#fff`            |
+| CSS units               | `#e06c75` (red)       | —             | `px`, `em`, `rem`                 |
+| CSS class selectors     | `#d19a66` (orange)    | —             | `.class`                          |
+| CSS id/pseudo selectors | `#56b6c2` (cyan)      | —             | `#id`, `:hover`, `::before`       |
+| JSON keys               | `#e06c75` (red)       | —             | `"name":`                         |
+| JSON true/false/null    | `#56b6c2` (cyan)      | —             | `true`, `null`                    |
+| Decorators              | `#61afef` (blue)      | italic        | `@Component`                      |
+| Annotations             | `#e5c07b` (yellow)    | —             | `@Override` (Java)                |
+| Regex                   | `#e06c75` (red)       | —             | `/pattern/g`                      |
+| Regex quantifiers       | `#d19a66` (orange)    | —             | `+`, `*`, `{1,3}`                 |
+| Markdown headings       | `#e06c75` (red)       | bold          | `# Title`                         |
+| Markdown bold           | `#d19a66` (orange)    | bold          | `**bold**`                        |
+| Markdown italic         | `#c678dd` (purple)    | italic        | `*italic*`                        |
+| Markdown link URL       | `#c678dd` (purple)    | —             | `(https://...)`                   |
+| Markdown link text      | `#61afef` (blue)      | —             | `[text]`                          |
+| Markdown code           | `#98c379` (green)     | —             | `` `code` ``                      |
+| Markdown code fence     | `#e5c07b` (yellow)    | —             | ` ``` `                           |
+| Markdown list markers   | `#e5c07b` (yellow)    | —             | `-`, `1.`                         |
+| Markdown quotes         | `#5c6370` (dark gray) | italic        | `> quote`                         |
+| Invalid                 | `#e06c75` (red)       | strikethrough | —                                 |
+| Deprecated              | `#d19a66` (orange)    | strikethrough | —                                 |
 
 ---
 
@@ -150,10 +174,10 @@ Everything else is gray or semantic.
 | ---------- | --------- | --------- |
 | Black      | `#282828` | `#606060` |
 | Red        | `#e06c75` | `#e88892` |
-| Green      | `#7fd88f` | `#a0e8ab` |
+| Green      | `#98c379` | `#b5d4a2` |
 | Yellow     | `#e5c07b` | `#edd9a3` |
-| Blue       | `#5c9cf5` | `#82b4f7` |
-| Magenta    | `#9d7cd8` | `#b8a0e5` |
+| Blue       | `#61afef` | `#89c4f7` |
+| Magenta    | `#c678dd` | `#d898e8` |
 | Cyan       | `#56b6c2` | `#7fc9d2` |
 | White      | `#eeeeee` | `#ffffff` |
 
@@ -161,9 +185,9 @@ Everything else is gray or semantic.
 
 ## Bracket Pair Colors (in order)
 
-1. `#fab283` (coral)
-2. `#9d7cd8` (purple)
+1. `#d19a66` (orange)
+2. `#c678dd` (purple)
 3. `#56b6c2` (cyan)
 4. `#e5c07b` (yellow)
-5. `#5c9cf5` (blue)
-6. `#7fd88f` (green)
+5. `#61afef` (blue)
+6. `#98c379` (green)
