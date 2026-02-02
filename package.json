@@ -1,0 +1,16 @@
+{
+  "name": "zenith-themes",
+  "version": "1.0.0",
+  "description": "Zenith theme for VS Code and Zed editors",
+  "scripts": {
+    "build": "node build.js",
+    "watch": "node build.js --watch"
+  },
+  "keywords": [
+    "theme",
+    "vscode",
+    "zed",
+    "dark-theme"
+  ],
+  "license": "MIT"
+}
