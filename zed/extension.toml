@@ -1,0 +1,7 @@
+id = "zenith-theme"
+name = "Zenith Theme"
+version = "1.0.0"
+schema_version = 1
+authors = ["Zenith Themes <zenith@example.com>"]
+description = "A clean, modern dark theme with warm coral accents and One Dark-inspired syntax highlighting"
+repository = "https://github.com/zenith/zenith-theme"

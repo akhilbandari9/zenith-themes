@@ -4,7 +4,11 @@
   "description": "Zenith theme for VS Code and Zed editors",
   "scripts": {
     "build": "node build.js",
-    "watch": "node build.js --watch"
+    "build:zed": "node build.js",
+    "watch": "node build.js --watch",
+    "watch:zed": "node build.js --watch",
+    "dev": "concurrently \"npm run watch\" \"npm run watch:zed\"",
+    "dev:zed": "npm run watch:zed"
   },
   "keywords": [
     "theme",

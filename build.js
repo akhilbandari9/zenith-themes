@@ -16,7 +16,7 @@ const { generateVSCodeTheme } = require("./src/vscode-theme");
 const { generateZedTheme } = require("./src/zed-theme");
 
 function build() {
-  console.log("🏗️  Building Zenith themes...\n");
+  console.log("🏗️  Building Zenith themes and extension...\n");
 
   // Generate VS Code theme
   const vsCodeTheme = generateVSCodeTheme(colors);
