@@ -1,9 +1,9 @@
 {
   "name": "zenith-theme",
   "displayName": "Zenith Theme",
-  "description": "A clean, modern theme with dark and light variants",
+  "description": "A clean, modern dark theme",
   "version": "1.0.0",
-  "publisher": "zenith",
+  "publisher": "akhilbandari9",
   "license": "MIT",
   "engines": {
     "vscode": "^1.60.0"
@@ -14,7 +14,6 @@
   "keywords": [
     "theme",
     "dark",
-    "light",
     "zenith",
     "modern"
   ],
@@ -24,11 +23,6 @@
         "label": "Zenith Dark",
         "uiTheme": "vs-dark",
         "path": "./themes/zenith-dark.json"
-      },
-      {
-        "label": "Zenith Light",
-        "uiTheme": "vs",
-        "path": "./themes/zenith-light.json"
       }
     ]
   },

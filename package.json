@@ -4,11 +4,10 @@
   "description": "Zenith theme for VS Code and Zed editors",
   "scripts": {
     "build": "node build.js",
-    "build:zed": "node build.js",
-    "watch": "node build.js --watch",
-    "watch:zed": "node build.js --watch",
-    "dev": "concurrently \"npm run watch\" \"npm run watch:zed\"",
-    "dev:zed": "npm run watch:zed"
+    "package:vscode": "node build.js && cd vs-code && vsce package"
+  },
+  "devDependencies": {
+    "@vscode/vsce": "^3.0.0"
   },
   "keywords": [
     "theme",

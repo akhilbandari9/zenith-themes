@@ -11,7 +11,6 @@ function zedColor(hex, alpha = "ff") {
 function generateZedTheme(colors) {
   const {
     PRIMARY_COLOR,
-    PRIMARY_HOVER_COLOR,
     BG_DARKEST,
     BG_DARKER,
     BG_DARK,
